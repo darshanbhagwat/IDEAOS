@@ -2,7 +2,7 @@ import os
 import json
 
 from fastapi import FastAPI
-from backend.crawler import crawl_page, research_web
+from crawler import crawl_page, research_web
 from fastapi import Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
