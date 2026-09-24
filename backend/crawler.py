@@ -50,15 +50,16 @@ def crawl_page(url):
             "error": str(e)
         }
 
-
 def search_web(query, max_results=5):
     results = []
 
     try:
-        with DDGS() as ddgs:
+        # Give the search request more time on Render
+        with DDGS(timeout=20) as ddgs:
             search_results = ddgs.text(
                 query,
-                max_results=max_results
+                max_results=max_results,
+                backend="auto"
             )
 
             for result in search_results:
@@ -79,7 +80,6 @@ def search_web(query, max_results=5):
             "results": [],
             "error": str(e)
         }
-
 
 def research_web(query, max_results=5):
     search_results = search_web(query, max_results)
