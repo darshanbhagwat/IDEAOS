@@ -1,0 +1,1536 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b0f;
+    color: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 80px 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 15px;
+}
+
+.container > p {
+    color: #888;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    padding: 25px;
+    background: #111116;
+    color: white;
+    border: 1px solid #292933;
+    border-radius: 18px;
+    font-size: 18px;
+    resize: vertical;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #555;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 18px;
+    background: #ffffff;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* AI Blueprint */
+
+.result {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.card {
+    background: #15151c;
+    border: 1px solid #292933;
+    border-radius: 18px;
+    padding: 25px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #555;
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Actions */
+
+.actions {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.actions button {
+    width: auto;
+    padding: 14px 28px;
+    background: #15151c;
+    color: white;
+    border: 1px solid #292933;
+}
+
+.actions button:hover {
+    background: #22222a;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 50px 20px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .result {
+        grid-template-columns: 1fr;
+    }
+}
+/* ==============================
+   DASHBOARD
+============================== */
+
+.dashboard-card {
+    text-align: center;
+}
+
+.dashboard-card h2 {
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.dashboard-latest {
+    grid-column: 1 / -1;
+}
+
+.dashboard-latest p {
+    font-size: 18px;
+    font-weight: normal;
+    color: #aaa;
+    line-height: 1.6;
+}
+#ideaSearch {
+    width: 100%;
+    margin-top: 15px;
+    padding: 16px 20px;
+    background: #111116;
+    color: white;
+    border: 1px solid #292933;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+#ideaSearch:focus {
+    border-color: #555;
+}
+
+#ideaSearch::placeholder {
+    color: #777;
+}
+.idea-category {
+    margin-top: 12px;
+    color: #888 !important;
+    font-size: 14px !important;
+    font-weight: bold;
+}
+/* ==============================
+   IDEA DATES
+============================== */
+
+.idea-date {
+    margin-top: 8px;
+    color: #777 !important;
+    font-size: 13px !important;
+}
+/* ==============================
+   IDEA EVOLUTION
+============================== */
+
+.evolution-timeline {
+    margin-top: 30px;
+}
+
+.evolution-card {
+    position: relative;
+    text-align: left;
+}
+
+.evolution-card h2 {
+    color: white;
+}
+
+.evolution-arrow {
+    text-align: center;
+    font-size: 28px;
+    color: #777;
+    margin-top: 20px;
+}
+/* ==============================
+   EVOLUTION DATE
+============================== */
+
+.evolution-date {
+    margin-top: 12px;
+    color: #777 !important;
+    font-size: 13px !important;
+}
+/* ============================= */
+/* IDEAOS RESEARCH DASHBOARD */
+/* ============================= */
+
+#researchResults {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.research-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.research-header h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.research-header p {
+    opacity: 0.75;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.research-card {
+    padding: 25px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.research-card h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 21px;
+}
+
+.research-card ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.research-card li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.research-item {
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.research-item h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.research-item ul {
+    margin-top: 8px;
+}
+
+.research-loading,
+.research-error {
+    text-align: center;
+    padding: 35px;
+    margin-top: 30px;
+    border-radius: 18px;
+}
+
+.research-loading {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.research-error {
+    background: rgba(255, 0, 0, 0.08);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .research-card {
+        padding: 20px;
+    }
+
+    .research-header h2 {
+        font-size: 26px;
+    }
+}
+/* ==============================
+   DASHBOARD 2.0
+   ============================== */
+
+.dashboard-card {
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.dashboard-card h2 {
+    margin-bottom: 12px;
+}
+
+.dashboard-card > p {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.dashboard-latest {
+    grid-column: 1 / -1;
+}
+
+.dashboard-latest > p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: normal;
+    max-width: 900px;
+}
+
+.dashboard-section-title {
+    margin-top: 35px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.dashboard-card {
+    width: auto;
+    min-height: 150px;
+    box-sizing: border-box;
+}
+
+.dashboard-section-title {
+    margin-top: 40px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .result {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-latest {
+        grid-column: auto;
+    }
+}
+/* ==============================
+   DASHBOARD QUICK ACTIONS
+   ============================== */
+
+.dashboard-section-title {
+    font-size: 22px;
+    margin: 40px 0 20px;
+}
+
+.dashboard-section-title + .actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+}
+
+.dashboard-section-title + .actions button {
+    min-width: 180px;
+    padding: 14px 18px;
+    font-size: 15px;
+}
+/* =========================================
+   IDEAOS PREMIUM ANIMATIONS
+   ========================================= */
+
+/* Smooth page entrance */
+.container {
+    animation: pageEnter 0.7s ease-out;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   DASHBOARD CARD ANIMATION
+   ========================================= */
+
+.dashboard-card {
+    position: relative;
+    overflow: hidden;
+    animation: cardEnter 0.6s ease-out both;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Cards appear one after another */
+.dashboard-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.dashboard-card:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.dashboard-card:nth-child(3) {
+    animation-delay: 0.19s;
+}
+
+.dashboard-card:nth-child(4) {
+    animation-delay: 0.26s;
+}
+
+.dashboard-card:nth-child(5) {
+    animation-delay: 0.33s;
+}
+
+.dashboard-card:nth-child(6) {
+    animation-delay: 0.40s;
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   CARD HOVER EFFECT
+   ========================================= */
+
+.dashboard-card:hover {
+    transform: translateY(-7px) scale(1.02);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(120, 120, 255, 0.15);
+}
+
+
+/* =========================================
+   MOVING LIGHT EFFECT
+   ========================================= */
+
+.dashboard-card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 70%;
+    height: 300%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: left 0.7s ease;
+    pointer-events: none;
+}
+
+.dashboard-card:hover::before {
+    left: 140%;
+}
+
+
+/* =========================================
+   LATEST IDEA SPECIAL EFFECT
+   ========================================= */
+
+.dashboard-latest {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.dashboard-latest:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(120, 120, 255, 0.18);
+}
+
+
+/* =========================================
+   RESEARCH STATUS
+   ========================================= */
+
+.research-status-card {
+    animation:
+        cardEnter 0.6s ease-out both,
+        researchGlow 3s ease-in-out infinite;
+}
+
+@keyframes researchGlow {
+    0%,
+    100% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 18px rgba(100, 150, 255, 0.12);
+    }
+}
+
+
+/* =========================================
+   QUICK ACTIONS
+   ========================================= */
+
+.dashboard-section-title {
+    animation: sectionEnter 0.8s ease-out;
+}
+
+@keyframes sectionEnter {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.dashboard-section-title + .actions button {
+    opacity: 0;
+    animation: buttonEnter 0.5s ease-out forwards;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.dashboard-section-title + .actions button:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.dashboard-section-title + .actions button:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.dashboard-section-title + .actions button:nth-child(3) {
+    animation-delay: 0.35s;
+}
+
+.dashboard-section-title + .actions button:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.dashboard-section-title + .actions button:nth-child(5) {
+    animation-delay: 0.55s;
+}
+
+@keyframes buttonEnter {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Button hover */
+.dashboard-section-title + .actions button:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.3),
+        0 0 12px rgba(120, 120, 255, 0.12);
+}
+
+
+/* Button click */
+.dashboard-section-title + .actions button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   SOFT BACKGROUND GLOW
+   ========================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: -250px;
+    left: -250px;
+    border-radius: 50%;
+    background: rgba(100, 120, 255, 0.05);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    bottom: -250px;
+    right: -200px;
+    border-radius: 50%;
+    background: rgba(150, 80, 255, 0.04);
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+/* =========================================
+   IDEAOS PREMIUM LOGO ANIMATION
+   ========================================= */
+
+.container > h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    animation: logoEnter 1s ease-out;
+}
+
+/* Soft animated glow */
+.container > h1::after {
+    content: "";
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: -8px;
+    height: 2px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.35;
+    filter: blur(2px);
+    animation: logoGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes logoEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.9);
+        letter-spacing: 10px;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        letter-spacing: 3px;
+    }
+}
+
+@keyframes logoGlow {
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scaleX(0.7);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scaleX(1);
+    }
+}
+/* =========================================
+   PREMIUM RESEARCH LOADER
+   ========================================= */
+
+.premium-research-loader {
+    width: 100%;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 45px 30px;
+    text-align: center;
+    border-radius: 24px;
+    animation: researchAppear 0.6s ease-out;
+}
+
+@keyframes researchAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animated research icon */
+
+.research-orbit {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.research-core {
+    position: relative;
+    z-index: 3;
+    font-size: 38px;
+    animation: researchPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes researchPulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* Orbit circles */
+
+.research-orbit span {
+    position: absolute;
+    inset: 5px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    opacity: 0.25;
+    animation: orbitSpin 3s linear infinite;
+}
+
+.research-orbit span:nth-child(2) {
+    inset: 15px;
+    animation-duration: 2.2s;
+    animation-direction: reverse;
+}
+
+.research-orbit span:nth-child(3) {
+    inset: 25px;
+    animation-duration: 1.7s;
+}
+
+@keyframes orbitSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Heading */
+
+.premium-research-loader h2 {
+    margin-bottom: 8px;
+    animation: textFade 1s ease-out;
+}
+
+.research-loader-subtitle {
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+
+/* Research steps */
+
+.research-steps {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.research-step {
+    padding: 15px 8px;
+    border-radius: 14px;
+    opacity: 0.35;
+    transform: translateY(8px);
+    animation: stepAppear 0.6s ease-out forwards;
+}
+
+.research-step:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.research-step:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.research-step:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+.research-step:nth-child(4) {
+    animation-delay: 1.7s;
+}
+
+.research-step span {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 7px;
+}
+
+.research-step p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.research-step.active {
+    opacity: 1;
+}
+
+@keyframes stepAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Progress bar */
+
+.research-progress {
+    width: 100%;
+    max-width: 600px;
+    height: 5px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(128, 128, 128, 0.15);
+}
+
+.research-progress-bar {
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    animation: researchProgress 5s ease-in-out infinite;
+    background: currentColor;
+}
+
+@keyframes researchProgress {
+    0% {
+        width: 5%;
+    }
+
+    50% {
+        width: 70%;
+    }
+
+    90% {
+        width: 92%;
+    }
+
+    100% {
+        width: 96%;
+    }
+}
+
+.research-loader-note {
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+@keyframes textFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .research-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .premium-research-loader {
+        padding: 35px 15px;
+    }
+}
+/* =========================================
+   PREMIUM RESEARCH RESULT CARDS
+   ========================================= */
+
+.research-header {
+    animation: researchResultEnter 0.7s ease-out;
+    margin-bottom: 25px;
+}
+
+.research-header h2 {
+    margin-bottom: 8px;
+}
+
+.research-header p {
+    opacity: 0.7;
+}
+
+@keyframes researchResultEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Research grid */
+
+.research-grid {
+    animation: researchGridEnter 0.8s ease-out;
+}
+
+@keyframes researchGridEnter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Individual research cards */
+
+.research-card {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation: researchCardEnter 0.6s ease-out both;
+}
+
+.research-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.research-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.research-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.research-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.research-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.research-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes researchCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Hover */
+
+.research-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(120, 120, 255, 0.12);
+}
+
+
+/* Moving light */
+
+.research-card::before {
+    content: "";
+    position: absolute;
+
+    top: -120%;
+    left: -100%;
+
+    width: 70%;
+    height: 300%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    transition: left 0.7s ease;
+
+    pointer-events: none;
+}
+
+.research-card:hover::before {
+    left: 140%;
+}
+
+
+/* Research sources */
+
+.research-sources {
+    animation: researchSourcesEnter 0.7s ease-out;
+}
+
+@keyframes researchSourcesEnter {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* =========================================
+   PREMIUM RESEARCH SOURCE CARDS
+   ========================================= */
+
+.research-sources {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.research-sources h3 {
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.research-source-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.research-source-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    padding: 20px;
+
+    border-radius: 18px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+
+    background: rgba(128, 128, 128, 0.06);
+
+    overflow: hidden;
+
+    animation: sourceCardEnter 0.6s ease-out both;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.research-source-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.research-source-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.research-source-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.research-source-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(120, 120, 255, 0.35);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(120, 120, 255, 0.12);
+}
+
+@keyframes sourceCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Number badge */
+
+.source-number {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+
+    background: rgba(120, 120, 255, 0.12);
+}
+
+
+/* Source information */
+
+.source-info h4 {
+    margin: 0 0 7px;
+    font-size: 16px;
+}
+
+.source-info p {
+    margin: 0;
+
+    font-size: 12px;
+
+    opacity: 0.55;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* Visit button */
+
+.source-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    border: 1px solid rgba(128, 128, 128, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.source-button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(120, 120, 255, 0.12);
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .research-source-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 1050px) {
+
+    .research-source-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* =========================================
+   FIX RESEARCH RESULTS LAYOUT
+   ========================================= */
+
+/* Research page should use full width */
+.result:has(.research-grid) {
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* Header stays at the top */
+.result:has(.research-grid) .research-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Sources stay below the header */
+.result:has(.research-grid) .research-sources {
+    width: 100%;
+    margin: 0 auto 35px;
+}
+
+/* Analysis cards stay below sources */
+.result:has(.research-grid) .research-grid {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Better research card spacing */
+.result:has(.research-grid) .research-card {
+    min-height: 180px;
+}
+/* =========================================
+   PREMIUM RESEARCH ACTION
+   ========================================= */
+
+.container > .actions:has(button[onclick="improveWithResearch()"]) {
+    width: 100%;
+    max-width: 900px;
+    margin: 35px auto 50px;
+
+    padding: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+
+    background: rgba(128, 128, 128, 0.06);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+
+    animation: researchActionEnter 0.7s ease-out;
+}
+
+@keyframes researchActionEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container > .actions:has(button[onclick="improveWithResearch()"])::before {
+    content: "🚀 Research complete — ready to improve your idea";
+    position: absolute;
+    margin-top: -75px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    opacity: 0.75;
+}
+
+.container > .actions:has(button[onclick="improveWithResearch()"]) button {
+    min-width: 280px;
+    padding: 15px 25px;
+
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.container > .actions:has(button[onclick="improveWithResearch()"]) button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.3),
+        0 0 22px rgba(120, 120, 255, 0.18);
+}
+
+.container > .actions:has(button[onclick="improveWithResearch()"]) button:active {
+    transform: scale(0.96);
+}
+/* =========================================
+   AI IMPROVEMENT REPORT
+   ========================================= */
+
+.improvement-header {
+    text-align: center;
+    margin-bottom: 35px;
+
+    animation: fadeUp 0.7s ease;
+}
+
+.improvement-header h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.improvement-header p {
+    opacity: 0.7;
+}
+
+/* Hero card */
+
+.improved-idea-card {
+    position: relative;
+
+    max-width: 1000px;
+    margin: 0 auto 35px;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(120,120,255,0.08),
+            rgba(0,0,0,0.05)
+        );
+
+    border: 1px solid rgba(120,120,255,0.15);
+
+    overflow: hidden;
+
+    animation: fadeUp 0.8s ease;
+}
+
+.improved-idea-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -50%;
+    left: -50%;
+
+    width: 200%;
+    height: 200%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(120,120,255,0.08),
+            transparent 70%
+        );
+
+    animation: rotateGlow 12s linear infinite;
+}
+
+@keyframes rotateGlow {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.improved-idea-card h3,
+.improved-idea-card p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Cards */
+
+.improvement-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.improvement-card {
+
+    animation: fadeUp 0.6s ease;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.improvement-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.25),
+        0 0 15px rgba(120,120,255,0.1);
+}
+
+/* Animation */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

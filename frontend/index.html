@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IDEAOS - One Idea. Everything.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="logo">IDEAOS</div>
+
+        <h1>One idea.<br><span>Everything you need.</span></h1>
+
+        <p class="subtitle">
+            Turn your idea into a complete blueprint for building it.
+        </p>
+
+        <div class="idea-box">
+
+            <textarea
+                id="ideaInput"
+                placeholder="Tell us your idea...&#10;&#10;Example: I want to start a custom sneaker brand for college students."
+            ></textarea>
+
+            <button id="buildButton">
+                Build My Idea 🚀
+            </button>
+            <button onclick="researchIdea()">
+    🔎 Research My Idea
+</button>
+<button onclick="improveWithResearch()">
+    ✨ Improve Using Research
+</button>
+            <button onclick="showHistory()">
+    📚 Saved Ideas
+</button>
+
+<button onclick="showDashboard()">
+    📊 Dashboard
+</button>
+
+        </div>
+        <div id="researchResults"></div>
+
+        <p class="hint">
+            Start with just one sentence. IDEAOS will do the rest.
+        </p>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
