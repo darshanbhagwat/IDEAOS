@@ -20,7 +20,7 @@ buildButton.addEventListener("click", async function () {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:8000/build", {
+        const response = await fetch("https://ideaos-jq7y.onrender.com/build", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -220,7 +220,7 @@ async function improveIdea() {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:8000/improve", {
+        const response = await fetch("https://ideaos-jq7y.onrender.com/improve", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -357,7 +357,7 @@ const ideaId = "IDEA-" + Date.now();
 localStorage.setItem("ideaos_id", ideaId);
     try {
 
-        const response = await fetch("http://127.0.0.1:8000/save", {
+        const response = await fetch("https://ideaos-jq7y.onrender.com/save", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -542,7 +542,7 @@ async function showHistory() {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:8000/ideas");
+        const response = await fetch("https://ideaos-jq7y.onrender.com/ideas");
 
         if (!response.ok) {
             throw new Error("Could not load saved ideas");
@@ -672,7 +672,7 @@ async function deleteIdea(index) {
     try {
 
         const response = await fetch(
-            `http://127.0.0.1:8000/ideas/${index}`,
+            `https://ideaos-jq7y.onrender.com/ideas/${index}`,
             {
                 method: "DELETE"
             }
@@ -703,7 +703,7 @@ async function openSavedIdea(index) {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:8000/ideas");
+        const response = await fetch("https://ideaos-jq7y.onrender.com/ideas");
 
         if (!response.ok) {
             throw new Error("Could not load saved ideas");
@@ -814,7 +814,7 @@ async function editSavedIdea(index) {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/ideas"
+            "https://ideaos-jq7y.onrender.com/ideas"
         );
 
         if (!response.ok) {
@@ -885,7 +885,7 @@ async function showDashboard() {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:8000/ideas");
+        const response = await fetch("https://ideaos-jq7y.onrender.com/ideas");
 
         if (!response.ok) {
             throw new Error("Could not load dashboard data");
@@ -1436,7 +1436,7 @@ async function researchIdea() {
 
     try {
         const response = await fetch(
-            "http://127.0.0.1:8000/full-research",
+            "https://ideaos-jq7y.onrender.com/full-research",
             {
                 method: "POST",
                 headers: {
@@ -1678,7 +1678,7 @@ async function improveWithResearch() {
     try {
         // First get fresh research
         const researchResponse = await fetch(
-            "http://127.0.0.1:8000/full-research",
+            "https://ideaos-jq7y.onrender.com/full-research",
             {
                 method: "POST",
                 headers: {
@@ -1700,7 +1700,7 @@ async function improveWithResearch() {
 
         // Send research to the AI improvement endpoint
         const improvementResponse = await fetch(
-            "http://127.0.0.1:8000/improve-with-research",
+            "https://ideaos-jq7y.onrender.com/improve-with-research",
             {
                 method: "POST",
                 headers: {
