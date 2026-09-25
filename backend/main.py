@@ -617,22 +617,45 @@ Return ONLY valid JSON.
 
 The JSON must contain exactly these fields:
 
-competitors
-existing_features
-market_opportunities
-problems_and_gaps
-differentiation
-recommendations
+{
+    "competitors": [
+        {
+            "name": "Competitor name",
+            "evidence": [
+                "Specific evidence from the research"
+            ]
+        }
+    ],
+    "existing_features": [
+        "Feature 1 found in the research",
+        "Feature 2 found in the research"
+    ],
+    "market_opportunities": [
+        "Opportunity 1 supported by the research",
+        "Opportunity 2 supported by the research"
+    ],
+    "problems_and_gaps": [
+        "Problem or gap 1 supported by the research",
+        "Problem or gap 2 supported by the research"
+    ],
+    "differentiation": [
+        "Specific way the user's idea could differentiate itself"
+    ],
+    "recommendations": [
+        "Practical recommendation 1",
+        "Practical recommendation 2"
+    ]
+}
 
-IMPORTANT JSON RULES:
-- Use normal JSON syntax only.
-- Do NOT use Markdown.
-- Do NOT use code fences.
-- Do NOT put Markdown links inside strings.
-- URLs must be plain text such as "https://example.com".
-- Use double quotes for JSON keys and string values.
-- Do not include comments.
-- Do not include any text before or after the JSON.
+IMPORTANT:
+- "competitors" must always be an array of objects.
+- Every competitor object must contain "name" and "evidence".
+- "evidence" must be an array of strings.
+- All other fields must be arrays of strings.
+- Use actual information from the provided web research.
+- Do not use placeholder words such as "suggestion", "evidence", or "Competitor".
+- Do not invent facts that are not supported by the research.
+- If the research does not provide enough information for a field, return an empty array [].
 
 WEB RESEARCH:
 {research_text}
