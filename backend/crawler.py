@@ -59,7 +59,7 @@ def search_web(query, max_results=5):
             search_results = ddgs.text(
                 query,
                 max_results=max_results,
-                backend="google,bing"
+                backend="bing"
             )
 
             for result in search_results:
