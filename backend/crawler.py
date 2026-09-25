@@ -80,35 +80,7 @@ def search_web(query, max_results=5):
             "results": [],
             "error": str(e)
         }
-def search_web(query, max_results=5):
-    results = []
-
-    try:
-        with DDGS(timeout=20) as ddgs:
-            search_results = ddgs.text(
-                query,
-                max_results=max_results,
-                backend="auto"
-            )
-
-            for result in search_results:
-                results.append({
-                    "title": result.get("title", ""),
-                    "url": result.get("href", ""),
-                    "description": result.get("body", "")
-                })
-
-        return {
-            "query": query,
-            "results": results
-        }
-
-    except Exception as e:
-        return {
-            "query": query,
-            "results": [],
-            "error": f"Search service unavailable: {str(e)}"
-        }
+    
 def research_web(query, max_results=5):
     search_results = search_web(query, max_results)
 
